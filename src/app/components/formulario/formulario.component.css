@@ -1,0 +1,73 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  margin-top: 10px;
+  text-align: center;
+  color: white;
+  font-weight: 300;
+}
+
+#contenedor-formulario {
+  display: inline-block;
+  width: 40%;
+  height: 100%;
+  vertical-align: top;
+  box-sizing: border-box;
+  padding-top: 15px;
+  background-color: #424242;
+}
+
+form {
+  min-width: 150px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px 20px;
+  margin: 0 auto;
+  color: white;
+}
+
+.campo-formulario {
+  width: 100%;
+}
+
+.radio {
+  display: block;
+  margin-top: 5px;
+}
+
+#boton-enviar {
+  margin-top: 20px;
+}
+
+#contenedor-lista {
+  display: inline-block;
+  width: 60%;
+  height: 100%;
+  vertical-align: top;
+  box-sizing: border-box;
+  padding-top: 15px;
+  background-color: #c2185b;
+  text-align: center;
+  color: white;
+}
+
+.dato-socio {
+  padding-right: 5px;
+  color: white;
+}
+
+.dato-socio::after {
+  content : "|";
+  margin-left: 5px;
+  color: white;
+}
+
+.boton-lista {
+  margin-right: 5px;
+  text-align: center;
+}

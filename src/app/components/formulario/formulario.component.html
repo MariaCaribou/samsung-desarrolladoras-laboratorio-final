@@ -1,0 +1,58 @@
+<div id="contenedor-formulario">
+    <h1>Registro Cliente</h1>
+    <form [formGroup]="formulario" (ngSubmit)="enviar()">
+        <mat-form-field class="campo-formulario" appearance="fill">
+            <mat-label>Nombre</mat-label>
+            <input matInput id="nombre" formControlName="nombre" name="nombre">
+        </mat-form-field>
+
+        <mat-form-field class="campo-formulario" appearance="fill">
+            <mat-label>Apellidos</mat-label>
+            <input matInput id="apellidos" formControlName="apellidos" name="apellidos">
+        </mat-form-field>
+
+        <mat-form-field class="campo-formulario" appearance="fill">
+            <mat-label>Número de Socio</mat-label>
+            <input matInput id="numero-de-socio" formControlName="numeroDeSocio" name="numeroDeSocio">
+        </mat-form-field>
+
+        <mat-form-field class="campo-formulario" appearance="fill">
+            <mat-label>DNI</mat-label>
+            <input matInput id="dni" formControlName="dni" name="dni">
+        </mat-form-field>
+
+        <mat-form-field class="campo-formulario" appearance="fill">
+            <mat-label>Teléfono</mat-label>
+            <input matInput id="telefono" formControlName="telefono" name="telefono">
+        </mat-form-field>
+
+        <mat-radio-group id="sexo" formControlName="sexo" name="sexo">
+            <mat-label>Sexo</mat-label>
+            <mat-radio-button class="radio" value="Hombre">Hombre</mat-radio-button>
+            <mat-radio-button class="radio" value="Mujer">Mujer</mat-radio-button>
+        </mat-radio-group>
+
+        <button type="submit" mat-raised-button color="primary" id="boton-enviar">Enviar</button>
+    </form>
+</div>
+
+<div id="contenedor-lista">
+    <h1>Lista Clientes</h1>
+    <mat-list id="lista-socios">
+        <mat-list-item *ngFor="let s of socios" class="elemento-lista">
+            <div class="contenedor-botones">
+                <button class="boton-lista" mat-raised-button color="accent" (click)="s == socioModificado ? terminarModificacion($event, s) : modificar($event, s)">{{ s == socioModificado ? "Hecho" : "Modificar" }}</button>
+                <button class="boton-lista" mat-raised-button color="basic" (click)="eliminar($event, s)">Eliminar</button>
+            </div>
+
+            <div>
+                <span class="dato-socio">{{ s == socioModificado ? formulario.value.nombre : s.nombre }}</span>
+                <span class="dato-socio">{{ s == socioModificado ? formulario.value.apellidos : s.apellidos }}</span>
+                <span class="dato-socio">{{ s == socioModificado ? formulario.value.numeroDeSocio : s.numeroDeSocio }}</span>
+                <span class="dato-socio">{{ s == socioModificado ? formulario.value.dni : s.dni }}</span>
+                <span class="dato-socio">{{ s == socioModificado ? formulario.value.telefono : s.telefono }}</span>
+                <span class="dato-socio">{{ s == socioModificado ? formulario.value.sexo :s.sexo }}</span>
+            </div>
+        </mat-list-item>
+    </mat-list>
+</div>
